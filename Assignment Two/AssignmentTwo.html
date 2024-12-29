@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reverse Names</title>
+    <style>
+        #results {
+            margin-top: 20px;
+            font-size: 20px;
+            color: green;
+        }
+    </style>
+</head>
+<body>
+
+    <button id="reverseButton">Reverse Names</button>
+    <div id="results"></div>
+
+    <script>
+        function reverseNames(namesArray) {
+            // Create a new array to hold the reversed names
+            const reversedArray = [];
+
+            // Loop through the names array in reverse order
+            for (let i = namesArray.length - 1; i >= 0; i--) {
+                reversedArray.push(namesArray[i]);
+            }
+
+            // Return the reversed array
+            return reversedArray;
+        }
+
+        function displayReversedNames() {
+            const names = ["Nadeem Syed", "Alex Smith", "John Marston"]; // Sample array of names
+            const reversedNames = reverseNames(names);
+            // Join the reversed array into a string for display
+            document.getElementById("results").textContent = reversedNames.join(", ");
+        }
+
+        // Assign the function to the button's click event
+        document.getElementById("reverseButton").onclick = displayReversedNames;
+    </script>
+
+</body>
+</html>
